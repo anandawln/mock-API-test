@@ -35,6 +35,11 @@ class TestGetUserData(unittest.TestCase):
         
         # Melakukan assertion pada nilai yang dikembalikan fungsi.
         self.assertIsNone(user_data)
+
+    @patch('requests.get', side_effect=TimeoutError)      # Kode Baru
+    def test_timeout_error(self, mock_get):               # Kode Baru
+        with self.assertRaises(TimeoutError):             # Kode Baru
+            get_user_data(1)                              # Kode Baru
  
 if __name__ == "__main__":
     unittest.main()

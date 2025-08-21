@@ -1,8 +1,8 @@
 import requests
  
 def get_user_data(user_id):
-    # url = f"https://example.com/users/{user_id}"
-    url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
+    url = f"https://example.com/users/{user_id}"
+    # url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
 
     response = requests.get(url)
     
@@ -13,6 +13,6 @@ def get_user_data(user_id):
     # Return data berupa JSON jika request berhasil
     return response.json()
 
-if __name__ == "__main__":
-    user_data = get_user_data(1)
-    print(user_data)
+# if __name__ == "__main__":
+#     user_data = get_user_data(1)
+#     print(user_data)
